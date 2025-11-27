@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: scientific-calculator-backend
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: ALLOWED_ORIGINS
+        value: "https://gemini-cli-calculator.vercel.app,http://localhost:3000"
