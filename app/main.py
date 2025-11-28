@@ -11,7 +11,7 @@ app = FastAPI(
 )
 
 # CORS (Cross-Origin Resource Sharing) - More secure configuration
-allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "https://gemini-cli-calculator.vercel.app/").split(",")
 
 origins = [origin.strip() for origin in allowed_origins]
 
